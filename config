@@ -1,0 +1,6 @@
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+
+  Host courslinux.vinci.be
+    HostName courslinux.vinci.be
+    Port 4980
+    User bryan.kassaluyindula
