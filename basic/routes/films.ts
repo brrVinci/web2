@@ -13,7 +13,7 @@ const defaultsFilms : Films[] = [
     id: 1,
     title: "4 fromages",
     director: "philippe echebest",
-    duration : 66
+    duration : 32
   },
   {id: 2,
     title: "leche",
