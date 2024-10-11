@@ -13,7 +13,7 @@ const defaultsFilms : Films[] = [
     id: 1,
     title: "4 fromages",
     director: "philippe echebest",
-    duration : 32
+    duration : 66
   },
   {id: 2,
     title: "leche",
@@ -35,6 +35,8 @@ router.get("/", (req, res) => {
 
     return res.json(tableau);
 });
+
+
 
 
 export default router;
