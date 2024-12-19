@@ -1,57 +1,64 @@
-import './App.css'
-import sound from "./assets/sounds/Infecticide-11-Pizza-Spinoza.mp3"
-import logo from "./assets/images/js-logo.png";
-//import pizzaBackground from "./assets/images/pizza.jpg";
+const App = () => {
+  const pageTitle = "Informations sur les films dans les cinémas";
 
-function App() {
+  const cinema1Name = "UGC DeBrouckère";
+  const cinema1Movie1Title = "Film 1 - DeBrouckère";
+  const cinema1Movie1Director = "Director A";
+  const cinema1Movie2Title = "Film 2 - DeBrouckère";
+  const cinema1Movie2Director = "Director B";
+
+  const cinema2Name = "UGC Toison d'Or";
+  const cinema2Movie1Title = "Film 1 - Toison d'Or";
+  const cinema2Movie1Director = "Director C";
+  const cinema2Movie2Title = "Film 2 - Toison d'Or";
+  const cinema2Movie2Director = "Director D";
   return (
-    <div className="page">
-      <Header title = "we love pizza" version={0+1}/>
-      <Main />
-      <Footer />
+    <div>
+      <PageTitle title={pageTitle} />
+
+      <Cinema
+        name={cinema1Name}
+        movie1Title={cinema1Movie1Title}
+        movie1Director={cinema1Movie1Director}
+        movie2Title={cinema1Movie2Title}
+        movie2Director={cinema1Movie2Director}
+      />
+
+      <Cinema
+        name={cinema2Name}
+        movie1Title={cinema2Movie1Title}
+        movie1Director={cinema2Movie1Director}
+        movie2Title={cinema2Movie2Title}
+        movie2Director={cinema2Movie2Director}
+      />
     </div>
   );
-}
-
-interface HeaderProps {
-  title: string;
-  version:number;
-}
-
-const Header = (props: HeaderProps) => {
-  return (
-    <header>
-      <h1 className="animate__animated animate__bounce">{props.title}</h1>
-      <h4>Version: {props.version}</h4>
-    </header>
-  );
 };
 
-const Main = () => {
-  return (
-    <main>
-      <p>My HomePage</p>
-      <p>
-        Because we love JS, you can also click on the header to stop / start the
-        music ; )
-      </p>
-      <audio id="audioPlayer" controls autoPlay>
-        <source src={sound} type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </main>
-  );
+const PageTitle = (props: { title: string }) => {
+  return <h1>{props.title}</h1>;
 };
 
-const Footer = () => {
-  return (
-    <footer>
-      <h1 className="animate__animated animate__bounce animate__delay-2s">
-        But we also love JS
-      </h1>
-      <img src={logo} alt="" />
-    </footer>
-  );
-};
+const Cinema = (props: {
+  name: string;
+  movie1Title: string;
+  movie1Director: string;
+  movie2Title: string;
+  movie2Director: string;
+}) => (
+  <div>
+    <h2>{props.name}</h2>
+    <ul>
+      <li>
+        <strong>{props.movie1Title}</strong> - Réalisateur :{" "}
+        {props.movie1Director}
+      </li>
+      <li>
+        <strong>{props.movie2Title}</strong> - Réalisateur :{" "}
+        {props.movie2Director}
+      </li>
+    </ul>
+  </div>
+);
 
 export default App;
